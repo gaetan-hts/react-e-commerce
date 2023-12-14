@@ -1,0 +1,97 @@
+.auth-page {
+  padding-top: 120px;
+
+  .bg-img {
+    background: url(../../img/img-5.jpg) center/cover;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -100;
+  }
+
+  .auth-container {
+    display: grid;
+    margin: 50px 10% 150px 10%;
+    grid-template-columns: 50% 50%;
+    background: $white1;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    opacity: 1;
+
+    @media screen and (max-width: 850px) {
+      grid-template-columns: 1fr;
+    }
+
+    form {
+      padding: 50px;
+
+      @media screen and (max-width: 850px) {
+        padding: 30px;
+      }
+
+      .forgotten-password {
+        cursor: pointer;
+        text-decoration: underline 1px;
+        font-size: 0.6;
+      }
+
+      input {
+        width: 80%;
+        font-family: $font2;
+        color: $black1;
+        padding: 10px 0;
+        margin: 10px;
+        background: none;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid $black1;
+        resize: none;
+        &::placeholder {
+          text-transform: uppercase;
+        }
+      }
+      button {
+        height: 35px;
+        width: 80%;
+        min-width: 180px;
+        color: $black1;
+        font-family: $font2;
+        font-weight: 600;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        background-color: $blue2;
+        border: none;
+        margin: 35px 0;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      h2 {
+        margin: 20px;
+        font-family: $font1;
+        font-size: 2.3rem;
+      }
+
+      .city-postcode-container,
+      .fullname-container {
+        display: grid;
+        grid-template-columns: 47% 6% 47%;
+        width: 80%;
+        margin: 0 10% 0 10%;
+
+        input {
+          margin: 10px 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.progress-bar-wrapper {
+  width: 100%;
+  background: #ffffff;
+  margin: auto;
+  margin-bottom: 0;
+  z-index: 2;
+  padding: 1em;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+  overflow: hidden;
+  text-align: center;
+  list-style-type: none;
+  width: 100%;
+}
+
+.progress-bar li {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 11px;
+  width: 33.33%;
+  position: relative;
+  z-index: 1;
+}
+
+.progress-bar li:before {
+  content: "";
+  display: block;
+  font-size: 12px;
+  line-height: 24px;
+  color: #d5dbdb;
+  background: #ffffff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin: 0 auto 5px auto;
+  border: 2px #d5dbdb solid;
+}
+
+.progress-bar li:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #d5dbdb;
+  position: absolute;
+  margin: auto;
+  left: 50%;
+  top: 13px;
+  z-index: -1;
+}
+
+.progress-bar li:last-child:after {
+  display: none;
+}
+
+/* SIGNUP PAGE 1 */
+.signup-1 .progress-bar li:first-child:before {
+  color: $blue2;
+  border-color: $blue2;
+}
+
+/* SIGNUP PAGE 2 */
+.signup-2 .progress-bar li:nth-child(2):before {
+  color: $blue2;
+  border-color: $blue2;
+}
+
+.signup-2 .progress-bar li:first-child:before {
+  background: $blue2;
+}
+
+.signup-2 .progress-bar li:first-child:after {
+  background: $blue2;
+}
+
+/* SIGNUP PAGE 3 */
+.signup-3 .progress-bar li:nth-child(3):before {
+  color: $blue2;
+  border-color: $blue2;
+}
+
+.signup-3 .progress-bar li:nth-child(2):before {
+  background: $blue2;
+}
+
+.signup-3 .progress-bar li:nth-child(2):after {
+  background: $blue2;
+}

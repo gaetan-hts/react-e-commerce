@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "tartine-script";
+  src: url(../fonts/tartinescriptregular.ttf);
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto-Light.ttf);
+}
+
+$font1: tartine-script, cursive;
+$font2: Roboto, serif;
+$white1: white;
+$white2: rgb(241, 241, 241);
+$black1: rgb(32, 32, 32);
+$black2: black;
+$grey1: rgb(192, 192, 192);
+$red1: rgb(255, 0, 0);
+$red2: rgba(255, 0, 0, 0.397);
+$blue1: rgb(0, 175, 236);
+$blue2: rgb(122, 208, 236);
+$blue3: rgba(122, 207, 236, 0.541);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  font-family: $font2;
+  background: $white2;
+  margin: auto;
+}
+
+.tooltip {
+  font-size: 1.3rem;
+  margin-left: 5px;
+}

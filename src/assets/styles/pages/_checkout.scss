@@ -1,0 +1,13 @@
+.checkout-page {
+  padding-top: 130px;
+
+  .bg-img {
+    background: url(../../img/img-5.jpg) center/cover;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
