@@ -1,5 +1,5 @@
 import "./assets/styles/index.scss";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import ItemDetails from "./pages/ItemDetails";
 import Checkout from "./pages/Checkout";
@@ -15,7 +15,7 @@ import NotFound from "./pages/NotFound";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="item/:itemId" element={<ItemDetails />} />
@@ -29,7 +29,7 @@ function App() {
           <Route path="checkout/failed" element={<Failed />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
