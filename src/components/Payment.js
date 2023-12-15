@@ -18,6 +18,7 @@ const Payment = ({
 
   const stripeKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
   const stripePromise = loadStripe(stripeKey);
+  // REACT_APP_STRIPE_PUBLIC_KEY=pk_test_51NPpn1GFUtRGHfE7U4xeFn8Np9gtdRAhQ056fzp1k7oJKysWj0xmHMH2k18tYMRNn44k3WKY2ltSKDJ0nhFAlypN00oFLUavEM
 
   const handleSubmit = async (e) => {
     e.preventDefault();
