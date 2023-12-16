@@ -29,13 +29,14 @@ const Home = () => {
           <h2>Découvrez</h2>
           <h3>NOTRE HISTOIRE</h3>
           <p>
-            Après 20 ans de bon et louaux services, "Mamie" a décidé de prendre
-            sa retraite à l'âge de 74ans ; en ayant transmis à Vincent les
-            secrets de ses recettes anciennes. Vincent, issue du milieu de
-            l'agriculture, passionné et connaisseur des bons produits de nos
-            régions, vous fait partagez son savoir-faire dans le respect des
-            traditions en vous proposant des confitures issus de fruits des
-            producteurs locaux en sélectionnant les meilleurs fruits de saison.
+            Après 20 ans de bons et loyaux services, "Mamie", a décidé de
+            prendre sa retraite à l'âge de 74ans. Elle laisse derrière elle un
+            héritage gourmand, confiant à Vincent les secrets de ses recettes
+            anciennes. Vincent, originaire du monde agricole, passionné et
+            connaisseur des bons produits de nos régions, vous fait partager son
+            savoir-faire, perpétuant les traditions avec des confitures et
+            autres délices issus en majorité de fruits des producteurs locaux en
+            sélectionnant les meilleurs fruits de saison.
           </p>
         </div>
         <div className="intro-pic">
@@ -76,16 +77,25 @@ const Home = () => {
             Avec une cuisson en chaudron de cuivre afin de garantir un goût
             d'exception, Vincent a su amener sa touche personnelle en apportant
             des créations originales et de nouveaux parfums en utilisant les
-            produits de sa région : La Provence   Garanti à 70% de fruits, Les
+            produits de sa région : La Provence Garanti à 70% de fruits, Les
             Confiotes de Mamie vous feront re découvrir les saveurs des bons
-            produits d'antan. Le secret,  de bons fruits, du sucre du
-            savoir-faire, de la passion !  Sans additifs, sans arômes
-            artificiels ni  conservateur ! Que du "NA-TU-REL!" Vienne se
-            rajouter les sirops avec de multiples parfums, à boire avec de l'eau
-            plate, gazeuse, ou autre breuvage.. Vous trouverez également les
-            recettes uniques de produits salés, tapas destiné à la tartinade, à
-            base de légumes de régions aux saveurs colorés, d'olive, tomate,
-            poivrons ect...
+            produits d'antan. Le secret, de bons fruits, du sucre, du
+            savoir-faire, de la passion ! Sans additifs, sans arômes artificiels
+            ni conservateur ! Que du "NA-TU-REL!" Vienne se rajouter les sirops
+            avec de multiples parfums, à boire avec de l'eau plate, gazeuse, ou
+            autre breuvage... Vous trouverez également les recettes uniques de
+            produits salés, tapas destiné à la tartinade, à base de légumes de
+            régions aux saveurs colorées, d'olive, tomate, poivrons ect...
+            Vincent en a fait du chemin depuis 4ans, il a eu le privilège de
+            participer au <strong>CHAMPIONNAT DU MONDE DE CONFITURE</strong> (
+            <a
+              href="/chemin/vers/conditions-generales-de-vente.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              voir article
+            </a>
+            )
           </p>
         </div>
       </section>

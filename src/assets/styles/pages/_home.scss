@@ -8,6 +8,10 @@
     .logo {
       padding-top: 15%;
       width: 180px;
+      @media screen and (max-width: 680px) {
+        width: 120px;
+        padding-top: 25%;
+      }
     }
 
     h1 {
@@ -24,6 +28,10 @@
       font-size: 2rem;
       padding-top: 20px;
       letter-spacing: 1px;
+
+      @media screen and (max-width: 680px) {
+        font-size: 1.5rem;
+      }
     }
     button {
       margin-top: 40px;
@@ -87,7 +95,8 @@
 
       h3 {
         text-transform: uppercase;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
+        font-weight: bold;
       }
 
       ul {
@@ -101,7 +110,7 @@
         li {
           color: $white1;
           transition: all 0.3s ease-in-out;
-          font-size: 1.7rem;
+          font-size: 1.8rem;
           margin: 15px;
 
           &:hover {
@@ -116,7 +125,7 @@
   .section2 {
     display: grid;
     grid-template-columns: 40% 60%;
-    background: $black1;
+    background: $black3;
     min-height: 350px;
 
     @media screen and (max-width: 680px) {
@@ -150,6 +159,9 @@
 
       p {
         margin-top: 30px;
+        a {
+          color: $red2;
+        }
       }
     }
     .intro-pic {
@@ -158,10 +170,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
-      @media screen and (max-width: 680px) {
-        margin-bottom: 120px;
-      }
 
       button {
         margin-top: 40px;
