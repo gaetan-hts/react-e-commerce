@@ -51,9 +51,9 @@ const CartValidation = () => {
     } else {
       switch (selectedShippingMethod) {
         case "relay":
-          return 6;
+          return 5.9;
         case "home":
-          return 10;
+          return 9.9;
         case "shop":
           return 0;
         default:
