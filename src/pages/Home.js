@@ -16,13 +16,24 @@ const Home = () => {
   const navigate = useNavigate();
   const menuOpen = useSelector((state) => state.menu.isOpen);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="home-container">
       <Navbar />
       <div className="header-container">
         <img src={logo} alt="logo" className="logo" />
         <h2>De la fraicheur pour vos papilles</h2>
-        <button onClick={() => navigate("/products")}>Voir nos produits</button>
+        <button
+          onClick={() => {
+            scrollToTop();
+            navigate("/products");
+          }}
+        >
+          Voir nos produits
+        </button>
       </div>
       <section className="section1">
         <div className="intro-text">
@@ -66,7 +77,12 @@ const Home = () => {
       <section className="section2">
         <div className="intro-pic">
           {" "}
-          <button onClick={() => navigate("/products")}>
+          <button
+            onClick={() => {
+              scrollToTop();
+              navigate("/products");
+            }}
+          >
             Voir nos produits
           </button>
         </div>
@@ -122,14 +138,6 @@ const Home = () => {
           <p>
             Une question ? Un problème ? N'hésitez pas à nous contacter par
             téléphone ou par email (dans le pied de page).
-          </p>
-        </div>
-        <div className="info-card">
-          <img src={coeur} alt="coeur" className="coeur" />
-          <h5>Nous et nos engagements</h5>
-          <p>
-            Vous souhaitez en savoir plus sur notre démarche ? Nous vous
-            racontons tout ici.
           </p>
         </div>
       </section>
