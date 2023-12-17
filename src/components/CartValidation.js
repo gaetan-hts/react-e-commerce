@@ -238,6 +238,7 @@ const CartValidation = () => {
         <Elements stripe={stripePromise}>
           <Shipping
             shippingFee={shippingFee}
+            shippingMethod={selectedShippingMethod}
             totalPrice={totalPrice}
             finalPrice={finalPrice}
             scrollToTop={scrollToTop}

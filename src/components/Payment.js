@@ -3,6 +3,7 @@ import axios from "axios";
 import { useStripe } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { useSelector } from "react-redux";
+
 const Payment = ({
   shippingFee,
   userData,
@@ -10,15 +11,16 @@ const Payment = ({
   newsletter,
   isCgvChecked,
   isEmailValid,
+  shippingMethod,
 }) => {
   const stripe = useStripe();
   const finalPrice = useSelector((state) => state.cart.finalPrice);
   const products = useSelector((state) => state.cart.cart);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const stripeKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
-  const stripePromise = loadStripe(stripeKey);
-
+  const stripePromise = loadStripe(
+    "pk_test_51NPpn1GFUtRGHfE7U4xeFn8Np9gtdRAhQ056fzp1k7oJKysWj0xmHMH2k18tYMRNn44k3WKY2ltSKDJ0nhFAlypN00oFLUavEM"
+  );
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -37,6 +39,7 @@ const Payment = ({
           userData: userData,
           price: finalPrice,
           shippingFee: shippingFee,
+          shippingMethod: shippingMethod,
           products: products.map(({ id, count, attributes }) => ({
             id,
             count,

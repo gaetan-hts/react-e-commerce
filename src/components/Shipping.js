@@ -3,7 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import Payment from "./Payment";
 import { setCurrentStep } from "../state/cart.slice";
 
-const Shipping = ({ shippingFee, totalPrice, finalPrice, scrollToTop }) => {
+const Shipping = ({
+  shippingFee,
+  shippingMethod,
+  totalPrice,
+  finalPrice,
+  scrollToTop,
+}) => {
   const cart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
   const [userData, setUserData] = useState({
@@ -164,6 +170,7 @@ const Shipping = ({ shippingFee, totalPrice, finalPrice, scrollToTop }) => {
             newsletter={subscribeNewsletter}
             isEmailValid={isEmailValid}
             isCgvChecked={isCgvChecked}
+            shippingMethod={shippingMethod}
           />
         </div>
       </div>
