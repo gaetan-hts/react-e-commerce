@@ -70,7 +70,7 @@ const Footer = () => {
           <div className="legal-mention">
             <p>
               <a
-                href="/chemin/vers/conditions-generales-de-vente.pdf"
+                href="../assets/img/cgv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >

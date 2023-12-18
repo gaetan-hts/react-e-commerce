@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import camion from "../assets/img/camion.png";
 import cadenas from "../assets/img/cadenas.png";
 import question from "../assets/img/question.png";
-import coeur from "../assets/img/coeur.png";
+import boutique from "../assets/img/boutique.png";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -115,7 +115,7 @@ const Home = () => {
           </p>
         </div>
       </section>
-      <section className="section3">
+      <section className="section4">
         <div className="info-card">
           <img src={camion} alt="camion" className="camion" />
           <h5>Livraison gratuite (65€)</h5>
@@ -123,6 +123,11 @@ const Home = () => {
             Livraison offerte à domicile ou en points relais pour les achats de
             plus de 65€
           </p>
+        </div>
+        <div className="info-card">
+          <img src={boutique} alt="boutique" className="boutique" />
+          <h5>Click and collect !</h5>
+          <p>Venez récupérer votre commande directement en magasin !</p>
         </div>
         <div className="info-card">
           <img src={cadenas} alt="cadenas" className="cadenas" />

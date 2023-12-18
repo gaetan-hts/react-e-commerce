@@ -191,8 +191,9 @@
       }
     }
   }
-  .section3 {
+  .section4 {
     display: flex;
+    justify-content: center;
     padding: 20px;
 
     @media screen and (max-width: 980px) {
@@ -205,6 +206,7 @@
     }
     .info-card {
       display: flex;
+      width: 25%;
       align-items: center;
       justify-content: flex-start;
       flex-direction: column;
@@ -214,6 +216,7 @@
 
       @media screen and (max-width: 980px) {
         gap: 20px;
+        width: 100%;
       }
 
       img {

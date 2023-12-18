@@ -15,9 +15,13 @@ import ProgressBar from "./ProgressBar";
 import { useNavigate } from "react-router-dom";
 import Tooltip from "./Tooltip";
 
-const stripePromise = loadStripe(
-  "pk_test_51NPpn1GFUtRGHfE7U4xeFn8Np9gtdRAhQ056fzp1k7oJKysWj0xmHMH2k18tYMRNn44k3WKY2ltSKDJ0nhFAlypN00oFLUavEM"
-);
+// const stripePromise = loadStripe(
+//   "pk_test_51NPpn1GFUtRGHfE7U4xeFn8Np9gtdRAhQ056fzp1k7oJKysWj0xmHMH2k18tYMRNn44k3WKY2ltSKDJ0nhFAlypN00oFLUavEM"
+// );
+
+const stripeKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
+console.log(stripeKey); // Ajoutez cette ligne
+const stripePromise = loadStripe(stripeKey);
 
 const shippingMethod = ["relay", "home", "shop"];
 
@@ -149,7 +153,7 @@ const CartValidation = () => {
               >
                 <label>
                   <div>
-                    Livraison en point relai - 6€{" "}
+                    Livraison en point relai - 5,90€{" "}
                     <Tooltip content="Nous choisirons le point relai le plus avantageux en fonction de son emplacement et de ses horaires.">
                       <span className="tooltip">
                         <i className="fa fa-info-circle"></i>
@@ -172,7 +176,7 @@ const CartValidation = () => {
                 onChange={handleShippingChange}
               >
                 <label>
-                  Livraison à domicile - 10€
+                  Livraison à domicile - 9,90€
                   <input
                     type="radio"
                     name="shipping"
