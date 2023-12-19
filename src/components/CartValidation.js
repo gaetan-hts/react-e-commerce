@@ -15,12 +15,7 @@ import ProgressBar from "./ProgressBar";
 import { useNavigate } from "react-router-dom";
 import Tooltip from "./Tooltip";
 
-// const stripePromise = loadStripe(
-//   "pk_test_51NPpn1GFUtRGHfE7U4xeFn8Np9gtdRAhQ056fzp1k7oJKysWj0xmHMH2k18tYMRNn44k3WKY2ltSKDJ0nhFAlypN00oFLUavEM"
-// );
-
 const stripeKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
-console.log(stripeKey); // Ajoutez cette ligne
 const stripePromise = loadStripe(stripeKey);
 
 const shippingMethod = ["relay", "home", "shop"];
@@ -55,9 +50,9 @@ const CartValidation = () => {
     } else {
       switch (selectedShippingMethod) {
         case "relay":
-          return 5.9;
+          return Math.round(5.9 * 100);
         case "home":
-          return 9.9;
+          return Math.round(9.9 * 100);
         case "shop":
           return 0;
         default:
