@@ -142,7 +142,7 @@ const Shipping = ({
               <p>
                 Je déclare avoir pris connaissance des{" "}
                 <a
-                  href="/chemin/vers/conditions-generales-de-vente.pdf"
+                  href="https://server-confiotes.fr/uploads/cgv_21d216cfde.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

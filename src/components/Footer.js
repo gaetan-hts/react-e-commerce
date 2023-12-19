@@ -70,7 +70,7 @@ const Footer = () => {
           <div className="legal-mention">
             <p>
               <a
-                href="../assets/img/cgv.pdf"
+                href="https://server-confiotes.fr/uploads/cgv_21d216cfde.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
