@@ -50,9 +50,9 @@ const CartValidation = () => {
     } else {
       switch (selectedShippingMethod) {
         case "relay":
-          return Math.round(5.9 * 100);
+          return Math.round(5.9) * 100;
         case "home":
-          return Math.round(9.9 * 100);
+          return Math.round(9.9) * 100;
         case "shop":
           return 0;
         default:
