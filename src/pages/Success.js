@@ -76,9 +76,13 @@ const Success = () => {
         mailCustomer: orderData?.attributes?.userData.email,
         objet: `Les Confiotes de Mamie - Commande N° ${orderData.id}`,
         content: `
-          Bonjour ${orderData?.attributes?.userData?.username} ${orderData?.attributes?.userData?.lastname},
+          Bonjour ${orderData?.attributes?.userData?.username} ${
+          orderData?.attributes?.userData?.lastname
+        },
 
-          Merci d'avoir choisi Les Confiotes de Mamie ! Nous avons bien reçu votre commande n°${orderData.id} d'un montant de ${orderData?.attributes?.price}€.
+          Merci d'avoir choisi Les Confiotes de Mamie ! Nous avons bien reçu votre commande n°${
+            orderData.id
+          } d'un montant de ${orderData?.attributes?.price.toFixed(2)}€.
 
           Récapitulatif de votre commande :
           ${orderSummary}

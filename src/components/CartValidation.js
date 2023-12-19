@@ -219,7 +219,7 @@ const CartValidation = () => {
                 </h5>
               )}
 
-              <div>{shippingFee} €</div>
+              <div>{shippingFee && shippingFee.toFixed(2)} €</div>
             </div>
             <div className="total">
               <h4>Total</h4>
