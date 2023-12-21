@@ -36,6 +36,19 @@ const CartMenu = () => {
           ></i>
         </div>
         <hr class="separator-line"></hr>
+        {cart.length <= 0 && (
+          <div className="empty-cart">
+            Votre panier est vide.
+            <button
+              onClick={() => {
+                dispatch(setIsCartOpen({}));
+                navigate("/products");
+              }}
+            >
+              voir nos produits
+            </button>
+          </div>
+        )}
         <div className="cart-list">
           {cart.map((item) => (
             <div className="cart-list-container" key={item.id}>
@@ -89,11 +102,13 @@ const CartMenu = () => {
             {totalPrice && totalPrice >= 65 ? (
               <h5>Livraison offerte !</h5>
             ) : (
-              <h5>
-                Plus que{" "}
-                <strong>{totalPrice && leftForFreeFee.toFixed(2)} € </strong>
-                pour bénéficier de la livraison gratuite.
-              </h5>
+              cart.length > 0 && (
+                <h5>
+                  Plus que{" "}
+                  <strong>{totalPrice && leftForFreeFee.toFixed(2)} € </strong>
+                  pour bénéficier de la livraison gratuite.
+                </h5>
+              )
             )}
           </div>
           <div className="btn-container">

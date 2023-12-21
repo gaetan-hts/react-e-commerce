@@ -188,7 +188,14 @@ const CartValidation = () => {
                 onChange={handleShippingChange}
               >
                 <label>
-                  Récupérer ma commande directement en magasin - 0€
+                  <div>
+                    Récupérer ma commande directement en magasin - 0€
+                    <Tooltip content="Nous vous préviendrons une fois votre commande disponible !">
+                      <span className="tooltip">
+                        <i className="fa fa-info-circle"></i>
+                      </span>
+                    </Tooltip>
+                  </div>
                   <input
                     type="radio"
                     name="shipping"

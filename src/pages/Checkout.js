@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import CartValidation from "../components/CartValidation";
 import Footer from "../components/Footer";
+import CartMenu from "../components/CartMenu";
 import ToggleMenu from "../components/ToggleMenu";
 import { useSelector } from "react-redux";
 
@@ -10,6 +11,7 @@ const Checkout = () => {
   return (
     <div className="checkout-page">
       <Navbar />
+      <CartMenu />
       <div className="bg-img"></div>
       {menuOpen ? <ToggleMenu menuOpen={menuOpen} /> : ""}
       <CartValidation />

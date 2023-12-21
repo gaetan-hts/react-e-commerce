@@ -11,6 +11,7 @@ import camion from "../assets/img/camion.png";
 import cadenas from "../assets/img/cadenas.png";
 import question from "../assets/img/question.png";
 import boutique from "../assets/img/boutique.png";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -25,7 +26,10 @@ const Home = () => {
       <Navbar />
       <div className="header-container">
         <img src={logo} alt="logo" className="logo" />
-        <h2>De la fraicheur pour vos papilles</h2>
+        <h2>
+          Des créations gourmandes,
+          <br /> un plaisir quotidien...
+        </h2>
         <button
           onClick={() => {
             scrollToTop();
@@ -113,6 +117,62 @@ const Home = () => {
             </a>
             )
           </p>
+        </div>
+      </section>
+      <section className="section3">
+        <div className="intro-text">
+          <h2>Pour les Professionnels</h2>
+          <h3>EVENEMENTS</h3>
+          <p>
+            <strong>Devenez Revendeur :</strong> Vous aimez nos produits ?
+            Contactez-nous pour devenir revendeur ! Nous collaborons avec des
+            épiceries, des marchands, des fromagers, des restaurateurs et des
+            campings, tant en France qu'à l'étranger.
+            <br />
+            <br />
+            <strong>Transformation de Production :</strong> Si vous êtes
+            producteur, transformez votre récolte chez nous ! De fruits en
+            confitures, sirops et vinaigres, à légumes en tartinables,
+            condiments et soupes, offrez à vos clients une variété de créations.
+            <br />
+            <br />
+            <strong>Offres aux Comités d'Entreprise :</strong> Pour les comités
+            d'entreprise, proposez nos produits à tarif préférentiel tout au
+            long de l'année. Nous pouvons également organiser des événements
+            spéciaux pour les marchés CE.
+            <br />
+            <br />
+            <strong>Cadeaux Personnalisés :</strong> Pour des événements
+            spéciaux tels que mariages ou baptêmes, nous créons des parfums sur
+            mesure. Vous pouvez même apposer votre propre marque sur nos
+            produits ou créer des étiquettes personnalisées de A à Z.
+          </p>
+        </div>
+        <div className="intro-pic">
+          <div className="contact-us">
+            <h3>Contactez-nous !</h3>
+            <CopyToClipboard
+              text="lesconfiotesdemamie@gmail.com"
+              className="hover"
+            >
+              <p
+                style={{ cursor: "pointer" }}
+                className="clipboard"
+                onClick={() => alert("Email copié !")}
+              >
+                lesconfiotesdemamie@gmail.com
+              </p>
+            </CopyToClipboard>
+            <CopyToClipboard text="06 46 41 31 59" className="hover">
+              <p
+                style={{ cursor: "pointer" }}
+                className="clipboard"
+                onClick={() => alert("Téléphone copié !")}
+              >
+                06 46 41 31 59
+              </p>
+            </CopyToClipboard>
+          </div>
         </div>
       </section>
       <section className="section4">
