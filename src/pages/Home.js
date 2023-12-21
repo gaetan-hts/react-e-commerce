@@ -134,6 +134,8 @@ const Home = () => {
             producteur, transformez votre récolte chez nous ! De fruits en
             confitures, sirops et vinaigres, à légumes en tartinables,
             condiments et soupes, offrez à vos clients une variété de créations.
+            Personnalisez également votre propre étiquette au nom de votre
+            enseigne en véhiculant vos valeurs !
             <br />
             <br />
             <strong>Offres aux Comités d'Entreprise :</strong> Pour les comités
@@ -145,7 +147,8 @@ const Home = () => {
             <strong>Cadeaux Personnalisés :</strong> Pour des événements
             spéciaux tels que mariages ou baptêmes, nous créons des parfums sur
             mesure. Vous pouvez même apposer votre propre marque sur nos
-            produits ou créer des étiquettes personnalisées de A à Z.
+            produits ou créer des étiquettes personnalisées de A à Z (photo,
+            texte, illustration...).
           </p>
         </div>
         <div className="intro-pic">
