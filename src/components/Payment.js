@@ -19,6 +19,7 @@ const Payment = ({
   const [errorMessage, setErrorMessage] = useState(null);
 
   const stripeKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
+  console.log(stripeKey);
   const stripePromise = loadStripe(stripeKey);
 
   const handleSubmit = async (e) => {
@@ -47,8 +48,6 @@ const Payment = ({
           })),
         });
 
-        console.log("Response from server:", res.data);
-
         if (newsletter) {
           try {
             const response = await axios.post(
@@ -70,7 +69,6 @@ const Payment = ({
         }
 
         const { stripeSession } = res.data;
-        console.log("Stripe Session ID:", stripeSession.id);
         localStorage.setItem("storedId", stripeSession.id);
         const result = await stripe.redirectToCheckout({
           sessionId: stripeSession.id,
