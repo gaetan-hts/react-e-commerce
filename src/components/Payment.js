@@ -19,7 +19,6 @@ const Payment = ({
   const [errorMessage, setErrorMessage] = useState(null);
 
   const stripeKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
-  console.log(stripeKey);
   const stripePromise = loadStripe(stripeKey);
 
   const handleSubmit = async (e) => {
