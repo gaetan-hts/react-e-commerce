@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.49bb330f.css",
+    "main.js": "/static/js/main.ac585353.js",
+    "static/media/section-pro.png": "/static/media/section-pro.02fc7bd426a75530fc1c.png",
+    "static/media/red-bg.jpg": "/static/media/red-bg.d28e7d091e02df3a7b35.jpg",
+    "static/media/img-5.jpg": "/static/media/img-5.dac4bd3bcb709dcf8493.jpg",
+    "static/media/vincent-2.jpg": "/static/media/vincent-2.b13762d7381abc3854c5.jpg",
+    "static/media/logo.png": "/static/media/logo.e9d258df0eabbe22bf80.png",
+    "static/media/Roboto-Light.ttf": "/static/media/Roboto-Light.8be2d1487420548b3b8d.ttf",
+    "static/media/tartinescriptregular.ttf": "/static/media/tartinescriptregular.013341089d12c8826b90.ttf",
+    "static/media/fruit.png": "/static/media/fruit.06ba399ff410382cac53.png",
+    "static/media/boutique.png": "/static/media/boutique.55c84553980ea44a675e.png",
+    "static/media/question.png": "/static/media/question.5f186e3c8f1c765b1b4b.png",
+    "static/media/truck.png": "/static/media/truck.41c8c36b43a10d0c3bf4.png",
+    "static/media/camion.png": "/static/media/camion.b318019d1315a1ff40e4.png",
+    "static/media/marmite 2.png": "/static/media/marmite 2.4feb3d61649cb806893c.png",
+    "static/media/cadenas.png": "/static/media/cadenas.153d4ba86e7125131412.png",
+    "index.html": "/index.html",
+    "main.49bb330f.css.map": "/static/css/main.49bb330f.css.map",
+    "main.ac585353.js.map": "/static/js/main.ac585353.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49bb330f.css",
+    "static/js/main.ac585353.js"
+  ]
+}
