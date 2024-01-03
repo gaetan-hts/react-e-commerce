@@ -109,7 +109,7 @@ const Home = () => {
             Vincent en a fait du chemin depuis 4ans, il a eu le privilège de
             participer au <strong>CHAMPIONNAT DU MONDE DE CONFITURE</strong> (
             <a
-              href="/chemin/vers/conditions-generales-de-vente.pdf"
+              href="https://server-confiotes.fr/uploads/article_champion_confiture_454d48edeb.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
