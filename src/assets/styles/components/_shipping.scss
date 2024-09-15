@@ -170,12 +170,14 @@
 
     .total,
     .shipping-fees,
-    .subtotal {
+    .subtotal,
+    .discount {
       margin-top: 5px;
     }
 
     .shipping-fees,
-    .subtotal {
+    .subtotal,
+    .discount {
       font-weight: 200;
 
       h4,

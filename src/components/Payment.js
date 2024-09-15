@@ -12,12 +12,13 @@ const Payment = ({
   isCgvChecked,
   isEmailValid,
   shippingMethod,
+  discountAmount,
 }) => {
   const stripe = useStripe();
   const finalPrice = useSelector((state) => state.cart.finalPrice);
   const products = useSelector((state) => state.cart.cart);
   const [errorMessage, setErrorMessage] = useState(null);
-
+  const discount = discountAmount > 0 ? true : false;
   const stripeKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
   const stripePromise = loadStripe(stripeKey);
 
@@ -40,6 +41,7 @@ const Payment = ({
           price: finalPrice,
           shippingFee: shippingFee,
           shippingMethod: shippingMethod,
+          discount: discount,
           products: products.map(({ id, count, attributes }) => ({
             id,
             count,

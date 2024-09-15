@@ -7,6 +7,7 @@ import {
   setShippingMethod,
   setFinalPrice,
   setCurrentStep,
+  addToCart,
 } from "../state/cart.slice";
 import { Elements } from "@stripe/react-stripe-js";
 import Shipping from "../components/Shipping";
@@ -19,6 +20,7 @@ const stripeKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
 const stripePromise = loadStripe(stripeKey);
 
 const shippingMethod = ["relay", "home", "shop"];
+const promoCodes = ["COSMEDI2K24", "NAVALCONF2K24"];
 
 const CartValidation = () => {
   const dispatch = useDispatch();
@@ -26,15 +28,40 @@ const CartValidation = () => {
   const cart = useSelector((state) => state.cart.cart);
   const finalPrice = useSelector((state) => state.cart.finalPrice);
   const currentStep = useSelector((state) => state.cart.currentStep);
-
   const [selectedShippingMethod, setSelectedShippingMethod] = useState(
     shippingMethod[0]
   );
+  const [promoCode, setPromoCode] = useState("");
+  const [promoCodeError, setPromoCodeError] = useState("");
+  const [promoCodeApplied, setPromoCodeApplied] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   const handleShippingChange = (event) => {
     const newShippingMethod = event.target.value;
     setSelectedShippingMethod(newShippingMethod);
     dispatch(setShippingMethod(newShippingMethod));
+  };
+
+  const handlePromoCodeChange = (event) => {
+    const newPromoCode = event.target.value;
+    setPromoCode(newPromoCode);
+    setIsButtonDisabled(false);
+    setPromoCodeError("");
+    setPromoCodeApplied(false);
+    setIsButtonDisabled(newPromoCode === "");
+  };
+
+  const applyPromoCode = () => {
+    if (!promoCodeApplied && promoCodes.includes(promoCode)) {
+      const discountedPrice = finalPrice * 0.85;
+      dispatch(setFinalPrice(discountedPrice));
+      setPromoCodeApplied(true);
+      setPromoCodeError("");
+      setIsButtonDisabled(true);
+    } else {
+      setPromoCodeError("Code promotionnel invalide");
+      setPromoCodeApplied(false);
+    }
   };
 
   const totalPrice = useMemo(() => {
@@ -43,6 +70,14 @@ const CartValidation = () => {
       0
     );
   }, [cart]);
+
+  const discountAmount = useMemo(() => {
+    if (promoCodeApplied) {
+      return totalPrice * 0.15;
+    } else {
+      return 0;
+    }
+  }, [totalPrice, promoCodeApplied]);
 
   const shippingFee = useMemo(() => {
     if (totalPrice > 65) {
@@ -62,8 +97,8 @@ const CartValidation = () => {
   }, [totalPrice, selectedShippingMethod]);
 
   useEffect(() => {
-    dispatch(setFinalPrice(totalPrice + shippingFee));
-  }, [selectedShippingMethod, totalPrice, shippingFee]);
+    dispatch(setFinalPrice(totalPrice + shippingFee - discountAmount));
+  }, [selectedShippingMethod, totalPrice, shippingFee, promoCodeApplied]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -206,10 +241,42 @@ const CartValidation = () => {
                 </label>
               </div>
             </div>
+            <div className="promo-code">
+              <h3>Code promotionnel :</h3>
+              <div className="promoCode-input-container">
+                <input
+                  type="text"
+                  placeholder="Entrez votre code promo"
+                  value={promoCode}
+                  onChange={handlePromoCodeChange}
+                  className={promoCodeApplied ? "input-promoCode-applied" : ""}
+                />
+                <button
+                  onClick={applyPromoCode}
+                  className={promoCodeApplied ? "promoCode-applied" : ""}
+                  disabled={isButtonDisabled}
+                >
+                  {promoCodeApplied ? (
+                    <>
+                      <p>Ajouté </p> <i className="fa-solid fa-check"></i>
+                    </>
+                  ) : (
+                    "Appliquer"
+                  )}
+                </button>
+              </div>
+              {promoCodeError && <div className="error">{promoCodeError}</div>}
+            </div>
             <div className="subtotal">
               <h4>Sous-total</h4>
               <div>{totalPrice && totalPrice.toFixed(2)} €</div>
             </div>
+            {promoCodeApplied && (
+              <div className="discount">
+                <h5>Code promotionnel (-15%)</h5>
+                <div>- {discountAmount.toFixed(2)} €</div>
+              </div>
+            )}
             <div className="shipping-fees">
               {totalPrice && totalPrice >= 65 ? (
                 <h5>Livraison offerte</h5>
@@ -248,6 +315,8 @@ const CartValidation = () => {
             totalPrice={totalPrice}
             finalPrice={finalPrice}
             scrollToTop={scrollToTop}
+            promoCodeApplied={promoCodeApplied}
+            discountAmount={discountAmount}
           />
         </Elements>
       )}

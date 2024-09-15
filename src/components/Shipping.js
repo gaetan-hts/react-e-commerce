@@ -9,6 +9,8 @@ const Shipping = ({
   totalPrice,
   finalPrice,
   scrollToTop,
+  promoCodeApplied,
+  discountAmount,
 }) => {
   const cart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
@@ -171,6 +173,7 @@ const Shipping = ({
             isEmailValid={isEmailValid}
             isCgvChecked={isCgvChecked}
             shippingMethod={shippingMethod}
+            discountAmount={discountAmount}
           />
         </div>
       </div>
@@ -210,6 +213,12 @@ const Shipping = ({
             <h4>Sous-total</h4>
             <div>{totalPrice && totalPrice.toFixed(2)} €</div>
           </div>
+          {promoCodeApplied && (
+            <div className="discount">
+              <h5>Code promotionnel (-15%)</h5>
+              <div>- {discountAmount.toFixed(2)} €</div>
+            </div>
+          )}
           <div className="shipping-fees">
             <h5>Frais de livraison</h5>
             <div>{shippingFee} €</div>

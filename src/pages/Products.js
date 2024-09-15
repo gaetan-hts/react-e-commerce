@@ -13,8 +13,15 @@ import ToggleMenu from "../components/ToggleMenu";
 import fruits from "../assets/img/fruit.png";
 import marmite from "../assets/img/marmite 2.png";
 import truck from "../assets/img/truck.png";
+import arrow from "../assets/img/arrow-down.png";
 
-const categories = ["Tout", "Confitures", "Tapas", "Sirops"];
+const categories = [
+  "Tous les produits",
+  "Confitures",
+  "Tapas",
+  "Sirops",
+  "Personnalisés",
+];
 
 const Products = () => {
   const searchTerm = useSelector((state) => state.search);
@@ -30,6 +37,7 @@ const Products = () => {
   const [showAdditionalTextTruck, setShowAdditionalTextTruck] = useState(false);
   const [showAdditionalTextMarmite, setShowAdditionalTextMarmite] =
     useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1000);
 
   useEffect(() => {
     axios
@@ -49,12 +57,12 @@ const Products = () => {
     ? items.data
         .filter(
           (item) =>
-            selectedCategory === "Tout" ||
+            selectedCategory === "Tous les produits" ||
             item.attributes.category.includes(selectedCategory)
         )
         .filter(
           (item) =>
-            (selectedCategory === "Tout" ||
+            (selectedCategory === "Tous les produits" ||
               item.attributes.category.includes(selectedCategory)) &&
             item.attributes.name
               .toLowerCase()
@@ -68,6 +76,21 @@ const Products = () => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 1000);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const handleCategoryChange = (e) => {
+    setSelectedCategory(e.target.value);
+    dispatch(clearSearchTerm());
   };
 
   return (
@@ -226,25 +249,41 @@ const Products = () => {
         </div>
       </div>
       <div className="item-list-nav">
-        <ul>
-          {categories.map((category) => (
-            <li key={category}>
-              <input
-                type="radio"
-                id={category}
-                checked={category === selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.id)}
-              />
-              <label
-                htmlFor={category}
-                onClick={() => dispatch(clearSearchTerm())}
-                className={category === selectedCategory ? "selected" : ""}
-              >
-                {category}
-              </label>
-            </li>
-          ))}
-        </ul>
+        {isSmallScreen ? (
+          <div className="select-container">
+            <select
+              value={selectedCategory}
+              onChange={handleCategoryChange}
+              className="category-select custom-select"
+            >
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
+        ) : (
+          <ul>
+            {categories.map((category) => (
+              <li key={category}>
+                <input
+                  type="radio"
+                  id={category}
+                  checked={category === selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.id)}
+                />
+                <label
+                  htmlFor={category}
+                  onClick={() => dispatch(clearSearchTerm())}
+                  className={category === selectedCategory ? "selected" : ""}
+                >
+                  {category}
+                </label>
+              </li>
+            ))}
+          </ul>
+        )}
         <div className="search-input">
           <input
             type="text"

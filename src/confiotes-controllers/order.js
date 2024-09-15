@@ -30,7 +30,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         })
       );
 
-      const shippingCost = shippingFee*100;
+      const shippingCost = -Number((shippingFee*100).toFixed(2));
       
       // Ajoutez les frais de livraison si nécessaires
       if (shippingCost >= 0) {
@@ -41,6 +41,22 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
               name: "Frais de livraison",
             },
             unit_amount: shippingCost,
+          },
+          quantity: 1, // Ajoutez un frais de livraison une seule fois
+        });
+      }
+
+      const promo = discountAmount * 100;
+      
+      // Ajoutez les frais de livraison si nécessaires
+      if (promo > 0) {
+        lineItems.push({
+          price_data: {
+            currency: "eur",
+            product_data: {
+              name: "Code promotionnel",
+            },
+            unit_amount: promo,
           },
           quantity: 1, // Ajoutez un frais de livraison une seule fois
         });
