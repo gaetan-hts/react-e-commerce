@@ -100,10 +100,9 @@ const Home = () => {
             produits de sa région : La Provence Garanti à 70% de fruits, Les
             Confiotes de Mamie vous feront re découvrir les saveurs des bons
             produits d'antan. Le secret, de bons fruits, du sucre, du
-            savoir-faire, de la passion ! Sans additifs, sans arômes artificiels
-            ni conservateur ! Que du "NA-TU-REL!" Vienne se rajouter les sirops
-            avec de multiples parfums, à boire avec de l'eau plate, gazeuse, ou
-            autre breuvage... Vous trouverez également les recettes uniques de
+            savoir-faire, de la passion ! Vienne se rajouter les sirops avec de
+            multiples parfums, à boire avec de l'eau plate, gazeuse, ou autre
+            breuvage... Vous trouverez également les recettes uniques de
             produits salés, tapas destiné à la tartinade, à base de légumes de
             régions aux saveurs colorées, d'olive, tomate, poivrons ect...
             Vincent en a fait du chemin depuis 4ans, il a eu le privilège de

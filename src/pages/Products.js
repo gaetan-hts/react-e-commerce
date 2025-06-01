@@ -153,7 +153,10 @@ const Products = () => {
           <div className="good-choice">
             <img src={truck} alt="truck" className="truck" />
             <div>
-              <p>En collaboration avec nos producteurs locaux</p>
+              <p>
+                Une partie de notre production vient des producteurs locaux,
+                pour vous proposer le meilleur goût en circuit court !
+              </p>
               <br />
               <div
                 className="read-more-btn"
