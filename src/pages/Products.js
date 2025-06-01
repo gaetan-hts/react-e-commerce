@@ -153,10 +153,7 @@ const Products = () => {
           <div className="good-choice">
             <img src={truck} alt="truck" className="truck" />
             <div>
-              <p>
-                Une partie de notre production vient des producteurs locaux,
-                pour vous proposer le meilleur goût en circuit court !
-              </p>
+              <p>En collaboration avec nos producteurs locaux</p>
               <br />
               <div
                 className="read-more-btn"
@@ -187,12 +184,9 @@ const Products = () => {
                     en saisons joignant la confiture de fraise et le sirop de
                     fraise ! Une grande volonté ANTI GASPI !
                     <br />
-                    <br /> Nous travaillons un maximum{" "}
-                    <strong>
-                      en collaboration avec les producteurs locaux
-                    </strong>{" "}
-                    en leur achetant leurs fruits et légumes pour vous proposer{" "}
-                    <strong>le meilleur du goût en circuit-court !</strong>
+                    <br /> Une partie de notre production vient des producteurs
+                    locaux, pour vous proposer le meilleur goût en circuit court
+                    !
                   </p>
                 </div>
               )}

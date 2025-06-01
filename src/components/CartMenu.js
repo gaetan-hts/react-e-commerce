@@ -112,11 +112,11 @@ const CartMenu = () => {
             )}
           </div>
           <div className="btn-container">
-            <button className="exit-cart">
-              <i
-                className="fa-solid fa-arrow-right-from-bracket"
-                onClick={() => dispatch(setIsCartOpen({}))}
-              ></i>
+            <button
+              className="exit-cart"
+              onClick={() => dispatch(setIsCartOpen({}))}
+            >
+              <i className="fa-solid fa-arrow-right-from-bracket"></i>
             </button>
             <button
               className="checkout"
