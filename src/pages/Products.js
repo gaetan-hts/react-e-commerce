@@ -20,7 +20,7 @@ const categories = [
   "Confitures",
   "Tapas",
   "Sirops",
-  "Personnalisés",
+  "Vinaigres",
 ];
 
 const Products = () => {
