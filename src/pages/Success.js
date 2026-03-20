@@ -132,6 +132,9 @@ const Success = () => {
                 Nous avons bien reçu votre commande, un email de confirmation va
                 vous être envoyé avec les détails de cette dernière.
               </p>
+              <p>
+                <p>lesconfiotesdemamie@gmail.com - 06 46 41 31 59</p>
+              </p>
             </div>
           </div>
           <button onClick={() => navigate("/")}>Accueil</button>

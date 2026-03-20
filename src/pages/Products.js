@@ -21,6 +21,7 @@ const categories = [
   "Tapas",
   "Sirops",
   "Vinaigres",
+  "Pâtes à tartiner",
 ];
 
 const Products = () => {
@@ -37,12 +38,12 @@ const Products = () => {
   const [showAdditionalTextTruck, setShowAdditionalTextTruck] = useState(false);
   const [showAdditionalTextMarmite, setShowAdditionalTextMarmite] =
     useState(false);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1000);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1200);
 
   useEffect(() => {
     axios
       .get(
-        "https://server-confiotes.fr/api/items?pagination[page]=1&pagination[pageSize]=100&populate=*"
+        "https://server-confiotes.fr/api/items?pagination[page]=1&pagination[pageSize]=100&populate=*",
       )
       .then((res) => {
         setItems(res.data);
@@ -58,7 +59,7 @@ const Products = () => {
         .filter(
           (item) =>
             selectedCategory === "Tous les produits" ||
-            item.attributes.category.includes(selectedCategory)
+            item.attributes.category.includes(selectedCategory),
         )
         .filter(
           (item) =>
@@ -66,7 +67,7 @@ const Products = () => {
               item.attributes.category.includes(selectedCategory)) &&
             item.attributes.name
               .toLowerCase()
-              .includes(searchTerm.toLowerCase())
+              .includes(searchTerm.toLowerCase()),
         )
     : [];
 
@@ -80,7 +81,7 @@ const Products = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 1000);
+      setIsSmallScreen(window.innerWidth < 1200);
     };
     window.addEventListener("resize", handleResize);
     return () => {

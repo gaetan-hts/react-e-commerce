@@ -24,9 +24,10 @@ const Failed = () => {
             <div className="message-container">
               <h3>Echec de la commande :(</h3>
               <p>
-                Le paiment de votre commande à échoué, nous n'avaons donc pas
-                reçu cette dernière, merci de réessayer.
+                Le paiment de votre commande à échoué, nous n'avons donc pas
+                reçu cette dernière, merci de réessayer ou de nous contacter.
               </p>
+              <p>lesconfiotesdemamie@gmail.com - 06 46 41 31 59</p>
             </div>
           </div>
           <button onClick={() => navigate("/")}>Accueil</button>
