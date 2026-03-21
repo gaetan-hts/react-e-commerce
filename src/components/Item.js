@@ -33,7 +33,11 @@ const Item = ({ id, url, name, price, weight, item, available }) => {
         <h3>{name}</h3>
         <div className="weight">
           <p>
-            {weight} {item.attributes.category === "Sirops" ? "cl" : "g"}
+            {weight}{" "}
+            {item.attributes.category === "Sirops" ||
+            item.attributes.category === "Vinaigres"
+              ? "cl"
+              : "g"}
           </p>
         </div>
       </div>
