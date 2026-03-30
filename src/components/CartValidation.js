@@ -73,7 +73,7 @@ const CartValidation = () => {
 
   const discountAmount = useMemo(() => {
     if (promoCodeApplied) {
-      return totalPrice * 0.15;
+      return totalPrice * 0.14;
     } else {
       return 0;
     }
@@ -273,7 +273,7 @@ const CartValidation = () => {
             </div>
             {promoCodeApplied && (
               <div className="discount">
-                <h5>Code promotionnel (-15%)</h5>
+                <h5>Code promotionnel (-14%)</h5>
                 <div>- {discountAmount.toFixed(2)} €</div>
               </div>
             )}
