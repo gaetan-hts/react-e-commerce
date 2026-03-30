@@ -20,7 +20,7 @@ const stripeKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
 const stripePromise = loadStripe(stripeKey);
 
 const shippingMethod = ["relay", "home", "shop"];
-const promoCodes = ["COSMEDI2K24", "NAVALCONF2K24"];
+const promoCodes = ["passvarois2k26"];
 
 const CartValidation = () => {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const CartValidation = () => {
   const finalPrice = useSelector((state) => state.cart.finalPrice);
   const currentStep = useSelector((state) => state.cart.currentStep);
   const [selectedShippingMethod, setSelectedShippingMethod] = useState(
-    shippingMethod[0]
+    shippingMethod[0],
   );
   const [promoCode, setPromoCode] = useState("");
   const [promoCodeError, setPromoCodeError] = useState("");
@@ -53,7 +53,7 @@ const CartValidation = () => {
 
   const applyPromoCode = () => {
     if (!promoCodeApplied && promoCodes.includes(promoCode)) {
-      const discountedPrice = finalPrice * 0.85;
+      const discountedPrice = finalPrice * 0.86;
       dispatch(setFinalPrice(discountedPrice));
       setPromoCodeApplied(true);
       setPromoCodeError("");
@@ -67,7 +67,7 @@ const CartValidation = () => {
   const totalPrice = useMemo(() => {
     return cart.reduce(
       (total, item) => total + item.count * item.attributes.price,
-      0
+      0,
     );
   }, [cart]);
 

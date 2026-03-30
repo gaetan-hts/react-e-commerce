@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat /c/Users/gaeta/dev/Next_ecommerce/apps/ui/store/*.ts)",
+      "Bash(cat /c/Users/gaeta/dev/Next_ecommerce/apps/ui/app/[locale]/page.tsx)"
+    ]
+  }
+}
